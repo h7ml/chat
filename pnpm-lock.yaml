@@ -9,13 +9,18 @@ specifiers:
   '@unocss/preset-typography': ^0.50.3
   '@unocss/reset': ^0.50.1
   astro: ^2.0.15
+  cz-git: ^1.5.1
   eventsource-parser: ^0.1.0
+  fs: 0.0.1-security
   highlight.js: ^11.7.0
   katex: ^0.6.0
   markdown-it: ^13.0.1
   markdown-it-highlightjs: ^4.0.1
   markdown-it-katex: ^2.0.3
+  node-id3: ^0.2.6
+  pcm-util: ^3.0.0
   punycode: ^2.3.0
+  recorder-core: ^1.2.23020100
   solid-js: ^1.6.11
   undici: ^5.20.0
   unocss: ^0.50.1
@@ -27,11 +32,15 @@ dependencies:
   '@unocss/reset': 0.50.1
   astro: 2.0.15
   eventsource-parser: 0.1.0
+  fs: 0.0.1-security
   highlight.js: 11.7.0
   katex: 0.6.0
   markdown-it: 13.0.1
   markdown-it-highlightjs: 4.0.1
   markdown-it-katex: 2.0.3
+  node-id3: 0.2.6
+  pcm-util: 3.0.0
+  recorder-core: 1.2.23020100
   solid-js: 1.6.11
   undici: 5.20.0
 
@@ -39,6 +48,7 @@ devDependencies:
   '@types/markdown-it': 12.2.3
   '@unocss/preset-attributify': 0.50.1
   '@unocss/preset-typography': 0.50.3
+  cz-git: 1.5.1
   punycode: 2.3.0
   unocss: 0.50.1_vite@4.1.2
 
@@ -1213,6 +1223,18 @@ packages:
     resolution: {integrity: sha512-tLRNUXati5MFePdAk8dw7Qt7DpxPB60ofAgn8WRhW6a2rcimZnYBP9oxHiv0OHy+Wz7kPMG+t4LGdt31+4EmGg==}
     dev: false
 
+  /audio-buffer/4.0.4:
+    resolution: {integrity: sha512-phH+MR3G+N/PO5ZKKxx7HlU6vJwAJFa0+FCaTjr/4lUZU/RCjUTqlk3nMJTRy5+b+6cbx8m//EtwZOVI5Ht9+w==}
+    deprecated: Depends on Web-Audio-API implementation. Use either web-audio-api, web-audio-js or web-audio-engine package.
+    dependencies:
+      audio-context: 1.0.3
+    dev: false
+
+  /audio-context/1.0.3:
+    resolution: {integrity: sha512-RH3/rM74f2ITlohhjgC7oYZVS97wtv/SEjXLCzEinnrIPIDxc39m2aFc6wmdkM0NYRKo1DMleYPMAIbnTRW0eA==}
+    deprecated: Depends on Web-Audio-API implementation. Use either web-audio-api, web-audio-js or web-audio-engine package.
+    dev: false
+
   /babel-plugin-jsx-dom-expressions/0.35.16_@babel+core@7.20.12:
     resolution: {integrity: sha512-Z8vaeXRdtI4qyq3bmQiLjiZnbjn2Rr0mjpXMwN+QxHbWjtlAFOJSHlkcxbrwPz/DdcfSgkmZM0Atvt/zMLeLyA==}
     peerDependencies:
@@ -1495,6 +1517,10 @@ packages:
   /csstype/3.1.1:
     resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==}
     dev: false
+
+  /cz-git/1.5.1:
+    resolution: {integrity: sha512-6L92sB4TGu7qt4jmkQ2AB3VeihAJWLJKv+zvgp/BBE6jMI6rzZZi6H/VI4/i42+oq7oRPyOIF0ku+kShGrfzTQ==}
+    dev: true
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
@@ -1817,6 +1843,10 @@ packages:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
     dev: false
 
+  /fs/0.0.1-security:
+    resolution: {integrity: sha512-3XY9e1pP0CVEUCdj5BmfIZxRBTSDycnbqhIOGec9QYtmVH2fbLpj86CFWkrNOkt/Fvty4KZG5lTglL9j/gJ87w==}
+    dev: false
+
   /fsevents/2.3.2:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -2059,6 +2089,13 @@ packages:
     engines: {node: '>=12.20.0'}
     dev: false
 
+  /iconv-lite/0.6.2:
+    resolution: {integrity: sha512-2y91h5OpQlolefMPmUlivelittSWy0rP+oYVpn6A7GwVHNE8AWzoYOBNmlwks3LobaJxgHCYZAnyNo2GgpNRNQ==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      safer-buffer: 2.1.2
+    dev: false
+
   /ieee754/1.2.1:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
     dev: false
@@ -2078,12 +2115,20 @@ packages:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
     dev: false
 
+  /is-audio-buffer/1.1.0:
+    resolution: {integrity: sha512-fmPC/dizJmP4ITCsW5oTQGMJ9wZVE+A/zAe6FQo3XwgERxmXHmm3ON5XkWDAxmyxvsrDmWx3NArpSgamp/59AA==}
+    dev: false
+
   /is-binary-path/2.1.0:
     resolution: {integrity: sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==}
     engines: {node: '>=8'}
     dependencies:
       binary-extensions: 2.2.0
     dev: true
+
+  /is-buffer/1.1.6:
+    resolution: {integrity: sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==}
+    dev: false
 
   /is-buffer/2.0.5:
     resolution: {integrity: sha512-i2R6zNFDwgEHJyQUtJEk0XFi1i0dPFn/oqjK3/vPCcDeJvW5NQ83V8QbicfF1SupOaB0h8ntgBC2YiE7dfyctQ==}
@@ -2855,6 +2900,12 @@ packages:
     hasBin: true
     dev: false
 
+  /node-id3/0.2.6:
+    resolution: {integrity: sha512-w8GuKXLlPpDjTxLowCt/uYMhRQzED3cg2GdSG1i6RSGKeDzPvxlXeLQuQInKljahPZ0aDnmyX7FX8BbJOM7REg==}
+    dependencies:
+      iconv-lite: 0.6.2
+    dev: false
+
   /node-releases/2.0.10:
     resolution: {integrity: sha512-5GFldHPXVG/YZmFzJvKK2zDSzPKhEp0+ZR5SVaoSag9fsL5YgHbUHDfnG5494ISANDcK4KwPXAx2xqVEydmd7w==}
     dev: false
@@ -3030,6 +3081,15 @@ packages:
     resolution: {integrity: sha512-ODbEPR0KKHqECXW1GoxdDb+AZvULmXjVPy4rt+pGo2+TnjJTIPJQSVS6N63n8T2Ip+syHhbn52OewKicV0373w==}
     dev: true
 
+  /pcm-util/3.0.0:
+    resolution: {integrity: sha512-O9E+GITJpjRc2oa6GcvocLNL7ooDG6Ml+p8k6uD61ZOuRNyMzFpmSotnEEMAS9IqoLncONphnvIQXsUADMLk8Q==}
+    deprecated: Not as cool as you may think. Look pcm-convert.
+    dependencies:
+      audio-buffer: 4.0.4
+      is-audio-buffer: 1.1.0
+      is-buffer: 1.1.6
+    dev: false
+
   /perfect-debounce/0.1.3:
     resolution: {integrity: sha512-NOT9AcKiDGpnV/HBhI22Str++XWcErO/bALvHCuhv33owZW/CjH8KAFLZDCmu3727sihe0wTxpDhyGc6M8qacQ==}
     dev: true
@@ -3139,6 +3199,10 @@ packages:
     dependencies:
       picomatch: 2.3.1
     dev: true
+
+  /recorder-core/1.2.23020100:
+    resolution: {integrity: sha512-HUxAPKmP0Q5Rd0Z57ufKGyJmUAB9cZPfe8vg4mckSDwx1JFJ+tln8i+jnGSCOjlKr6tC2UL4ifcWwa7w0jf5pA==}
+    dev: false
 
   /rehype-parse/8.0.4:
     resolution: {integrity: sha512-MJJKONunHjoTh4kc3dsM1v3C9kGrrxvA3U8PxZlP2SjH8RNUSrb+lF7Y0KVaUDnGH2QZ5vAn7ulkiajM9ifuqg==}
@@ -3305,6 +3369,10 @@ packages:
 
   /safe-buffer/5.2.1:
     resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
+    dev: false
+
+  /safer-buffer/2.1.2:
+    resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: false
 
   /sass-formatter/0.7.6:
