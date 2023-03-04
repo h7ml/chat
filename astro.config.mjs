@@ -7,11 +7,11 @@ import solidJs from '@astrojs/solid-js'
 import vercelDisableBlocks from './plugins/vercelDisableBlocks'
 
 import node from '@astrojs/node'
-import vercel from '@astrojs/vercel/edge'
+import cloudflare from '@astrojs/cloudflare'
 
 const envAdapter = () => {
-  if (process.env.OUTPUT == 'vercel') {
-    return vercel()
+  if (process.env.OUTPUT == 'cloudflare') {
+    return cloudflare()
   } else {
     return node({
       mode: 'standalone'
@@ -35,7 +35,7 @@ export default defineConfig({
   adapter: envAdapter(),
   vite: {
     plugins: [
-      process.env.OUTPUT == 'vercel' && vercelDisableBlocks(),
+      process.env.OUTPUT == 'cloudflare' && vercelDisableBlocks(),
     ]
   },
 });

@@ -12,6 +12,7 @@
     "commit": "git cz"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^6.1.3",
     "@astrojs/node": "^5.0.4",
     "@astrojs/solid-js": "^2.0.2",
     "@astrojs/vercel": "^3.1.3",
@@ -40,7 +41,9 @@
   },
   "config": {
     "commitizen": {
-      "path": "node_modules/cz-git"
+      "path": "node_modules/cz-git",
+      "useEmoji": true,
+      "czConfig": ".commitlintrc.cjs"
     }
   }
 }
